@@ -1,4 +1,5 @@
 # PICKCAT 自动加后缀
+![未命名(2) (1).jpg](https://pic1.imgdb.cn/i/034h2fvGpoCudTVRpkYiYv.jpg)
 
 一个 Chrome / Edge 浏览器扩展，在 [PICKCAT 论坛](https://pickcat.dao3.fun/) 发帖、评论时，自动在行尾追加自定义后缀（默认“喵”）。
 
