@@ -16,7 +16,7 @@
 
 本扩展未上架 Chrome 应用商店，需通过“开发者模式”加载。
 
-1. 前往 [Releases](https://github.com/你的用户名/pickcat-miao/releases) 页面，下载最新的 `pickcat-miao-extension.zip`。
+1. 前往 [Releases](https://github.com/lszh2012/pickcat-miao/releases) 页面，下载最新的 `pickcat-miao-extension.zip`。
 2. 将 zip 解压到任意文件夹（解压后应能看到 `manifest.json` 等文件）。
 3. 打开 Chrome / Edge，地址栏输入 `chrome://extensions/` 并回车。
 4. 打开右上角的 **开发者模式** 开关。
