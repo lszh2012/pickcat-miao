@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "PICKCAT 自动加喵",
+  "version": "1.0",
+  "description": "PICKCAT 发帖/评论自动加自定义后缀",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://pickcat.dao3.fun/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://pickcat.dao3.fun/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon/icon16.png",
+      "48": "icon/icon48.png",
+      "128": "icon/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icon/icon16.png",
+    "48": "icon/icon48.png",
+    "128": "icon/icon128.png"
+  }
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      width: 280px;
+      padding: 16px;
+      font-family: system-ui, sans-serif;
+      font-size: 14px;
+    }
+    h3 {
+      margin: 0 0 12px;
+      font-size: 15px;
+    }
+    input {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-bottom: 10px;
+      font-size: 13px;
+    }
+    button {
+      width: 100%;
+      padding: 8px;
+      background: #4a90d9;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 13px;
+      margin-bottom: 6px;
+    }
+    button:hover {
+      background: #357abd;
+    }
+    .hint {
+      color: #888;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <h3>🐱 PICKCAT 加后缀设置</h3>
+  <input id="suffixInput" type="text" placeholder="多个用英文逗号分隔">
+  <button id="saveBtn">保存</button>
+  <button id="resetBtn">恢复默认（喵）</button>
+  <p class="hint">第一个后缀为默认插入的；检测时匹配任意一个后缀都算已加。</p>
+  <script src="popup.js"></script>
+</body>
+</html>
