@@ -3,52 +3,57 @@
 <head>
   <meta charset="UTF-8">
   <style>
-    body {
-      width: 280px;
-      padding: 16px;
-      font-family: system-ui, sans-serif;
-      font-size: 14px;
-    }
-    h3 {
-      margin: 0 0 12px;
-      font-size: 15px;
-    }
-    input {
-      width: 100%;
-      box-sizing: border-box;
-      padding: 8px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      margin-bottom: 10px;
-      font-size: 13px;
-    }
-    button {
-      width: 100%;
-      padding: 8px;
-      background: #4a90d9;
-      color: #fff;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 13px;
-      margin-bottom: 6px;
-    }
-    button:hover {
-      background: #357abd;
-    }
-    .hint {
-      color: #888;
-      font-size: 12px;
-      line-height: 1.5;
-    }
+    body { width: 300px; padding: 16px; font-family: system-ui, sans-serif; font-size: 14px; }
+    .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 1px solid #eee; padding-bottom: 8px; }
+    h3 { margin: 0; font-size: 15px; }
+    .switch { position: relative; display: inline-block; width: 36px; height: 20px; }
+    .switch input { opacity: 0; width: 0; height: 0; }
+    .slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #ccc; transition: .4s; border-radius: 20px; }
+    .slider:before { position: absolute; content: ""; height: 16px; width: 16px; left: 2px; bottom: 2px; background-color: white; transition: .4s; border-radius: 50%; }
+    input:checked + .slider { background-color: #4a90d9; }
+    input:checked + .slider:before { transform: translateX(16px); }
+    
+    .list-area { margin-bottom: 12px; max-height: 150px; overflow-y: auto; background: #fafafa; border-radius: 6px; padding: 4px; }
+    .suffix-item { display: flex; align-items: center; justify-content: space-between; padding: 6px; border-bottom: 1px solid #eee; }
+    .suffix-item:last-child { border-bottom: none; }
+    .suffix-item label { display: flex; align-items: center; gap: 8px; cursor: pointer; flex-grow: 1; }
+    .del-btn { background: none; border: none; color: #e74c3c; cursor: pointer; font-size: 16px; padding: 0 8px; }
+    
+    .add-area { display: flex; gap: 6px; margin-bottom: 12px; }
+    .add-area input { flex-grow: 1; padding: 6px; border: 1px solid #ccc; border-radius: 4px; }
+    .add-area button { padding: 6px 12px; background: #4a90d9; color: #fff; border: none; border-radius: 4px; cursor: pointer; }
+    
+    .option-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; font-size: 13px; }
   </style>
 </head>
 <body>
-  <h3>🐱 PICKCAT 加后缀设置</h3>
-  <input id="suffixInput" type="text" placeholder="多个用英文逗号分隔">
-  <button id="saveBtn">保存</button>
-  <button id="resetBtn">恢复默认（喵）</button>
-  <p class="hint">第一个后缀为默认插入的；检测时匹配任意一个后缀都算已加。</p>
+  <div class="header">
+    <h3>🐱 PICKCAT 加后缀</h3>
+    <label class="switch" title="总开关">
+      <input type="checkbox" id="enableToggle">
+      <span class="slider"></span>
+    </label>
+  </div>
+  
+  <div id="configArea">
+    <div class="list-area" id="suffixList">
+      <!-- JS 动态渲染 -->
+    </div>
+    
+    <div class="add-area">
+      <input type="text" id="newSuffix" placeholder="添加新后缀，如：喵~">
+      <button id="addBtn">添加</button>
+    </div>
+
+    <div class="option-row">
+      <span>从勾选的后缀中随机选一个</span>
+      <label class="switch">
+        <input type="checkbox" id="randomToggle">
+        <span class="slider"></span>
+      </label>
+    </div>
+  </div>
+  
   <script src="popup.js"></script>
 </body>
 </html>

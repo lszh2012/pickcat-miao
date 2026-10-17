@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "PICKCAT 自动加喵",
-  "version": "1.0",
+  "version": "1.1.0",
   "description": "PICKCAT 发帖/评论自动加自定义后缀",
   "permissions": [
     "storage"
